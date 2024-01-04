@@ -1,0 +1,45 @@
+:root {
+  --primary-color: #ffe156;
+  /* --primary-color-hover: #ffe056b9; */
+  --primary-color-hover: #dfb800;
+  --secondary-color: #5674ff;
+  --secondary-color-hover: #395aeb;
+  --tertiary-color: #a156ff;
+  --quaternary-color: #baabbd;
+  --black: #000000;
+  --black-hover: #2b2929;
+  --white: #ffffff;
+  --white-hover: #f2f2f2;
+  --grey: #c4c4c4;
+
+  --mobile-screen-small: 375px;
+  --mobile-screen-large: 500px;
+  --tablet-screen: 750px;
+  --desktop-screen: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+}
+
+:host {
+  all: initial;
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
