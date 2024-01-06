@@ -11,8 +11,18 @@ class Header extends HTMLElement {
     this._openButton = this.shadowRoot.querySelector('.open-button')
     this._openButton.addEventListener('click', () => {
       this.shadowRoot.querySelector('.sidebar').style.display = 'flex'
-      this.shadowRoot.querySelector('.fullbar').style.filter = 'blur(5px)'
-      this.parentElement.querySelector('main').style.filter = 'blur(5px)'
+      // this.shadowRoot.querySelector('.fullbar').style.filter = 'blur(5px)'
+      // this.parentElement.style.filter = 'blur(5px)'
+      // this.parentElement.querySelector('main').style.backdropFilter = 'blur(10px)'
+      // this.parentElement.querySelector('main').style.zIndex = '50'
+      // this.parentElement.querySelector('main').style.filter = 'blur(10px)'
+    })
+    this._openButtonIcon = shadowRoot.querySelector('.open-button i')
+    this._openButtonIcon.addEventListener('mouseover', () => {
+      this._openButtonIcon.classList.add('fa-beat-fade')
+    })
+    this._openButtonIcon.addEventListener('mouseout', () => {
+      this._openButtonIcon.classList.remove('fa-beat-fade')
     })
 
     this._closeButton = this.shadowRoot.querySelector('.close-button')
@@ -25,8 +35,16 @@ class Header extends HTMLElement {
     })
     this._closeButton.addEventListener('click', () => {
       this.shadowRoot.querySelector('.sidebar').style.display = 'none'
-      this.shadowRoot.querySelector('.fullbar').style.filter = 'none'
       this.parentElement.querySelector('main').style.filter = 'none'
+    })
+
+    this._windowScrollY = window.scrollY
+    this._fullBarNav = this.shadowRoot.querySelector('.fullbar nav')
+    if (this._windowScrollY > 0) {
+      this._fullBarNav.classList.toggle('sticky', window.scrollY > 0)
+    }
+    window.addEventListener('scroll', () => {
+      this._fullBarNav.classList.toggle('sticky', window.scrollY > 0)
     })
   }
   connectedCallback() {
@@ -38,10 +56,10 @@ class Header extends HTMLElement {
     headerTemplate.innerHTML = `
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <header>
-          <nav>
-            <ul class="sidebar">
+          <ul class="sidebar">
+            <nav>
               <li>
-                <button class="close-button"><i class="fa-solid fa-xmark fa-3x"></i></button>
+                <button class="close-button"><i class="fa-solid fa-xmark fa-2x"></i></button>
               </li>
               <li><a href="/">NEW</a></li>
               <li><a href="/">USED</a></li>
@@ -49,10 +67,12 @@ class Header extends HTMLElement {
               <li><a href="/">RENTALS</a></li>
               <li><a href="/">CAR CARE</a></li>
               <li><a href="/">ABOUT</a></li>
-            </ul>
-            <ul class="fullbar">
+            </nav>
+          </ul>
+          <ul class="fullbar">
+            <nav>
               <li>
-                <img src="assets/brand/tiny-1.png" alt="Mr Stash Cars Logo" />
+                <img src="../assets/brand/tiny-3.png" alt="Mr Stash Cars Logo" />
               </li>
               <li><a href="/">NEW</a></li>
               <li><a href="/">USED</a></li>
@@ -61,10 +81,11 @@ class Header extends HTMLElement {
               <li><a href="/">CAR CARE</a></li>
               <li><a href="/">ABOUT</a></li>
               <li>
-                <button class="open-button"><i class="fa-solid fa-bars fa-3x"></i></button>
+                <!-- <button class="open-button"><i class="fa-solid fa-bars fa-3x"></i></button> -->
+                <button class="open-button"><i class="fa-solid fa-bars fa-2x"></i></button>
               </li>
-            </ul>
-          </nav>
+            </nav>
+          </ul>
         </header>
     `
     return headerTemplate
