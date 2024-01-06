@@ -3,8 +3,8 @@ import style from './header.css' assert { type: 'css' }
 class Header extends HTMLElement {
   constructor() {
     super()
-    const headerTemplate = this.content()
-    const shadowRoot = this.attachShadow({ mode: 'open' })
+    this.headerTemplate = this.content()
+    this.shadowRoot = this.attachShadow({ mode: 'open' })
     shadowRoot.adoptedStyleSheets = [style]
     shadowRoot.appendChild(headerTemplate.content)
 
@@ -92,4 +92,10 @@ class Header extends HTMLElement {
   }
 }
 
-customElements.define('responsive-header', Header)
+init = () => {
+  const instance = new Header()
+  console.log(instance)
+}
+
+module.export = { init }  
+// customElements.define('responsive-header', Header, { extends: 'div' })
