@@ -1,12 +1,32 @@
 export default class Header {
   constructor(parentElement) {
+    this.windowScrollY = window.scrollY
     this.innerHTML = this.content()
     this._parentElement = parentElement
   }
   init() {
     this._parentElement.innerHTML = this.innerHTML
+    this.listeners()
   }
-  listeners() {}
+  listeners() {
+    const openButton = document.querySelector('button.open-button')
+    openButton.addEventListener('click', () => {
+      document.querySelector('nav.sidebar').style.display = 'flex'
+    })
+
+    const closeButton = document.querySelector('button.close-button')
+    closeButton.addEventListener('click', () => {
+      document.querySelector('nav.sidebar').style.display = 'none'
+    })
+
+    const fullBarElement = document.querySelector('header nav.fullbar')
+    if (this._windowScrollY > 0) {
+      fullBarElement.classList.toggle('sticky', window.scrollY > 0)
+    }
+    window.addEventListener('scroll', () => {
+      fullBarElement.classList.toggle('sticky', window.scrollY > 0)
+    })
+  }
   content() {
     return `
       <nav class="sidebar">
