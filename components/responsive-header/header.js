@@ -1,7 +1,8 @@
 export default class Header {
-  constructor(parentElement) {
+  constructor(parentElement, isSticky) {
     this.windowScrollY = window.scrollY
     this.innerHTML = this.content()
+    this._isSticky = isSticky
     this._parentElement = parentElement
   }
   init() {
@@ -20,12 +21,16 @@ export default class Header {
     })
 
     const fullBarElement = document.querySelector('header nav.fullbar')
-    if (this._windowScrollY > 0) {
-      fullBarElement.classList.toggle('sticky', window.scrollY > 0)
+    if (this._isSticky === true) {
+      if (this._windowScrollY > 0) {
+        fullBarElement.classList.toggle('sticky', window.scrollY > 0)
+      }
+      window.addEventListener('scroll', () => {
+        fullBarElement.classList.toggle('sticky', window.scrollY > 0)
+      })
+    } else {
+      fullBarElement.classList.add('static')
     }
-    window.addEventListener('scroll', () => {
-      fullBarElement.classList.toggle('sticky', window.scrollY > 0)
-    })
   }
   content() {
     return `

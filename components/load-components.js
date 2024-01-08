@@ -2,7 +2,7 @@ import Header from './responsive-header/header.js'
 import Footer from './responsive-footer/footer.js'
 
 const headerElement = document.querySelector('header')
-const header = new Header(headerElement)
+const header = new Header(headerElement, false)
 header.init()
 
 const footerElement = document.querySelector('footer')

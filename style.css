@@ -125,7 +125,7 @@ ul {
   margin-left: 40px;
 }
 
-@media screen and (min-width: 750px) {
+/* @media screen and (min-width: 750px) {
   .hero-banner-text h1 {
     font-size: 2.5rem;
   }
@@ -141,7 +141,7 @@ ul {
   .hero-banner-text p {
     font-size: 2rem;
   }
-}
+} */
 
 /***************
 * HEADER       *
@@ -190,7 +190,9 @@ header a::after {
   z-index: -1;
 }
 
-header a:hover {
+header a:hover,
+header a:focus,
+header a:active {
   color: #000000;
   &:before {
     transform: scaleY(1.5);
@@ -216,12 +218,19 @@ header .fullbar {
   position: fixed;
   padding: 20px 30px;
   transition: 0.6s;
+  z-index: 1;
 }
 
 header .fullbar.sticky {
   transition: 0.6s;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
   background-color: #000000b4;
+}
+
+header .fullbar.static {
+  background-color: #000000;
+  position: relative;
+  transition: 0.6s;
 }
 
 header .fullbar ul {
@@ -238,6 +247,10 @@ header .fullbar ul li:first-child {
   margin-right: auto;
 }
 
+header .fullbar ul li {
+  display: flex;
+}
+
 header .fullbar ul li a {
   padding: 0px 30px;
 }
@@ -247,7 +260,8 @@ header .fullbar ul li button {
 }
 
 header .sidebar {
-  box-shadow: -10px 0 10px rgba(19, 19, 19, 0.123);
+  /* box-shadow: -10px 0 10px rgba(19, 19, 19, 0.123); */
+  box-shadow: -10px 0 20px #00000096;
   position: fixed;
   top: 0;
   right: 0;
@@ -270,17 +284,112 @@ header .sidebar ul li:first-child {
 }
 
 header .sidebar ul li {
-  /* border: 2px red solid; */
-  /* padding: 10px 0px; */
+  padding: 10px 0px;
   margin: 30px 0px;
   display: flex;
   justify-content: flex-start;
 }
 
 header .sidebar ul li a {
-  /* width: 100%; */
+  width: 100%;
   text-align: left;
   padding: 0px 15px;
+}
+
+@media (max-width: 300px) {
+  header .fullbar ul li:not(:first-child):not(:last-child) {
+    display: none;
+  }
+  header .sidebar {
+    width: 100%;
+  }
+  footer .social ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer .social li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 20px 0px;
+  }
+  footer .social ul li a {
+    padding: 20px 15px;
+    background-color: transparent;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 300px) {
+  header .fullbar ul li:not(:first-child):not(:last-child) {
+    display: none;
+  }
+  footer .social ul li {
+    margin: 30px auto;
+  }
+
+  footer .social ul li a {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 750px) and (min-width: 501px) {
+  header .fullbar ul li:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:last-child) {
+    display: none;
+  }
+  header .sidebar li:nth-child(2),
+  header .sidebar li:nth-child(3) {
+    display: none;
+  }
+  footer .social ul {
+    margin: auto;
+  }
+  footer .social ul li {
+    margin: 30px auto;
+  }
+  footer .social ul li a {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 751px) {
+  header .fullbar ul li:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:last-child) {
+    display: none;
+  }
+  header .sidebar li:nth-child(2),
+  header .sidebar li:nth-child(3),
+  header .sidebar li:nth-child(4) {
+    display: none;
+  }
+  footer .social ul {
+    margin: auto;
+  }
+  footer .social ul li {
+    margin: 30px auto;
+  }
+  footer .social ul li a {
+    padding: 20px 15px;
+  }
+}
+
+@media (min-width: 1201px) {
+  header .fullbar ul li:last-child {
+    display: none;
+  }
+  header .sidebar {
+    display: none !important;
+  }
+  footer .social ul {
+    margin: auto;
+  }
+  footer .social ul li {
+    margin: 30px auto;
+  }
+  footer .social ul li a {
+    font-size: 1.2rem;
+    padding: 20px 15px;
+  }
 }
 
 /***************
@@ -355,17 +464,12 @@ footer .social {
 }
 
 footer .social ul {
-  margin: auto;
-  padding: 30px 25px;
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
   max-width: 500px;
 }
 
 footer .social ul li a {
-  padding: 20px 15px;
-  margin: 10px;
+  /* margin: 10px; */
   text-decoration: none;
   background-color: var(--primary-color);
   color: var(--black);
