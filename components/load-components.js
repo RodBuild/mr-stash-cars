@@ -1,10 +1,11 @@
+import Header from './responsive-header/header.js'
 import Footer from './responsive-footer/footer.js'
 
-const element = document.querySelector('footer')
-const footer = new Footer(element, 'red')
+const headerElement = document.querySelector('header')
+const header = new Header(headerElement)
+header.init()
 
-// import { init } from './responsive-header/header.js'
+const footerElement = document.querySelector('footer')
+const footer = new Footer(footerElement)
 
-// const header = new Header()
-// const header = document.querySelector('.header')
-console.log('file loaded')
+footer.init()
