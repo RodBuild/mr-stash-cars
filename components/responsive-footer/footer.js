@@ -26,14 +26,11 @@ export default class Footer {
   content() {
     return `
       <div class="content">
-        <div class="collapsible">
-          <h3 class="heading">
-            <button aria-expanded="false">
-              <p>SHOPPING TOOLS</p>
-              <i class="fa-solid fa-plus fa-xl"></i>
-            </button>
-          </h3>
-          <div class="collapsible-content hidden">
+        <nav class="fat-list">
+          <div class="list-group">
+            <h3 class="heading">
+              SHOPPING TOOLS
+            </h3>
             <ul>
               <li><a href="#">Trade-In</a></li>
               <li><a href="#">Test Drive a Car</a></li>
@@ -41,35 +38,23 @@ export default class Footer {
               <li><a href="#">Priced Under 10K</a></li>
             </ul>
           </div>
-        </div>
-        <div class="collapsible">
-          <h3 class="heading">
-            <button aria-expanded="false">
-              <p>VEHICLES</p>
-              <i class="fa-solid fa-plus fa-xl"></i>
-            </button>
-          </h3>
-          <div class="collapsible-content hidden">
+          <div class="list-group">
+            <h3 class="heading">
+              VEHICLES
+            </h3>
             <ul>
-              <li><a href="#">All Vehicles</a></li>
-              <li><a href="#">SUVs</a></li>
-              <li><a href="#">Trucks</a></li>
-              <li><a href="#">Cars</a></li>
-              <li><a href="#">Vans</a></li>
-              <li><a href="#">Crossover</a></li>
-              <li><a href="#">Hybrids</a></li>
-              <li><a href="#">Electric</a></li>
+                <li><a href="#">All Vehicles</a></li>
+                <li><a href="#">SUVs</a></li>
+                <li><a href="#">Trucks</a></li>
+                <li><a href="#">Cars</a></li>
+                <li><a href="#">Vans</a></li>
+                <li><a href="#">Crossover</a></li>
             </ul>
           </div>
-        </div>
-        <div class="collapsible">
-          <h3 class="heading">
-            <button aria-expanded="false">
-              <p>CAR CARE</p>
-              <i class="fa-solid fa-plus fa-xl"></i>
-            </button>
-          </h3>
-          <div class="collapsible-content hidden">
+          <div class="list-group">
+            <h3 class="heading">
+              CAR CARE
+            </h3>
             <ul>
               <li><a href="#">Appointments</a></li>
               <li><a href="#">General Check</a></li>
@@ -78,15 +63,10 @@ export default class Footer {
               <li><a href="#">Engine Check</a></li>
             </ul>
           </div>
-        </div>
-         <div class="collapsible">
-          <h3 class="heading">
-            <button aria-expanded="false">
-              <p>ABOUT MR STASH</p>
-              <i class="fa-solid fa-plus fa-xl"></i>
-            </button>
-          </h3>
-          <div class="collapsible-content hidden">
+          <div class="list-group">
+            <h3 class="heading">
+              ABOUT MR STASH
+            </h3>
             <ul>
               <li><a href="#">Contact Us</a></li>
               <li><a href="#">About Us</a></li>
@@ -94,8 +74,79 @@ export default class Footer {
               <li><a href="#">Our Goal</a></li>
             </ul>
           </div>
-        </div>
+        </nav>
+
+        <nav class="compact-list">
+          <div class="collapsible">
+            <h3 class="heading">
+              <button aria-expanded="false">
+                <p>SHOPPING TOOLS</p>
+                <i class="fa-solid fa-plus fa-xl"></i>
+              </button>
+            </h3>
+            <div class="collapsible-content hidden">
+              <ul>
+                <li><a href="#">Trade-In</a></li>
+                <li><a href="#">Test Drive a Car</a></li>
+                <li><a href="#">Search Inventory</a></li>
+                <li><a href="#">Priced Under 10K</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="collapsible">
+            <h3 class="heading">
+              <button aria-expanded="false">
+                <p>VEHICLES</p>
+                <i class="fa-solid fa-plus fa-xl"></i>
+              </button>
+            </h3>
+            <div class="collapsible-content hidden">
+              <ul>
+                <li><a href="#">All Vehicles</a></li>
+                <li><a href="#">SUVs</a></li>
+                <li><a href="#">Trucks</a></li>
+                <li><a href="#">Cars</a></li>
+                <li><a href="#">Vans</a></li>
+                <li><a href="#">Crossover</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="collapsible">
+            <h3 class="heading">
+              <button aria-expanded="false">
+                <p>CAR CARE</p>
+                <i class="fa-solid fa-plus fa-xl"></i>
+              </button>
+            </h3>
+            <div class="collapsible-content hidden">
+              <ul>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">General Check</a></li>
+                <li><a href="#">Fluids Check</a></li>
+                <li><a href="#">Brake Check</a></li>
+                <li><a href="#">Engine Check</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="collapsible">
+            <h3 class="heading">
+              <button aria-expanded="false">
+                <p>ABOUT MR STASH</p>
+                <i class="fa-solid fa-plus fa-xl"></i>
+              </button>
+            </h3>
+            <div class="collapsible-content hidden">
+              <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Find Us</a></li>
+                <li><a href="#">Our Goal</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
+
       <div class="social">
         <ul>
           <li><a href="#"><i class="fa-brands fa-facebook fa-2xl"></i></a></li>

@@ -303,6 +303,9 @@ header .sidebar ul li a {
   header .sidebar {
     width: 100%;
   }
+  footer .content nav.fat-list {
+    display: none;
+  }
   footer .social ul {
     flex-direction: row;
     flex-wrap: wrap;
@@ -325,6 +328,9 @@ header .sidebar ul li a {
   header .fullbar ul li:not(:first-child):not(:last-child) {
     display: none;
   }
+  footer .content nav.fat-list {
+    display: none;
+  }
   footer .social ul li {
     margin: 30px auto;
   }
@@ -340,6 +346,9 @@ header .sidebar ul li a {
   }
   header .sidebar li:nth-child(2),
   header .sidebar li:nth-child(3) {
+    display: none;
+  }
+  footer .content nav.fat-list {
     display: none;
   }
   footer .social ul {
@@ -362,6 +371,9 @@ header .sidebar ul li a {
   header .sidebar li:nth-child(4) {
     display: none;
   }
+  footer .content nav.compact-list {
+    display: none;
+  }
   footer .social ul {
     margin: auto;
   }
@@ -379,6 +391,9 @@ header .sidebar ul li a {
   }
   header .sidebar {
     display: none !important;
+  }
+  footer .content nav.compact-list {
+    display: none;
   }
   footer .social ul {
     margin: auto;
@@ -401,6 +416,34 @@ footer {
 
 footer .content {
   margin: 20px;
+}
+
+footer .fat-list {
+  max-width: 2000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .fat-list .list-group .heading {
+  text-transform: uppercase;
+  color: var(--black);
+  font-size: var(--font-size-medium);
+  font-weight: 650;
+}
+
+footer .fat-list .list-group ul {
+  margin-top: 15px;
+}
+
+footer .fat-list .list-group ul li {
+  padding: 8px 0px;
+}
+
+footer .fat-list .list-group ul li a {
+  font-size: var(--font-size-small);
+  color: var(--black);
+  text-decoration: none;
 }
 
 footer .collapsible {
@@ -469,7 +512,6 @@ footer .social ul {
 }
 
 footer .social ul li a {
-  /* margin: 10px; */
   text-decoration: none;
   background-color: var(--primary-color);
   color: var(--black);
@@ -485,7 +527,6 @@ footer .social ul li a:hover {
 footer .copyright {
   margin: 50px 0px;
   text-align: center;
-  /* width: 100%; */
   color: rgb(88, 89, 91);
   font-size: var(--font-size-small);
   font-weight: 600;
