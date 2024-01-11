@@ -24,6 +24,15 @@ export default class Footer {
     })
   }
   content() {
+    const links = {
+      about: {
+        contact: './pages/about/contact-us/',
+        aboutus: './pages/about/about-us/',
+        findus: './pages/about/find-us/',
+        ourgoal: './pages/about/our-goal/',
+      },
+    }
+
     return `
       <div class="content">
         <nav class="fat-list">
@@ -68,10 +77,10 @@ export default class Footer {
               ABOUT MR STASH
             </h3>
             <ul>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Find Us</a></li>
-              <li><a href="#">Our Goal</a></li>
+              <li><a href=${links.about.contact}>Contact Us</a></li>
+              <li><a href=${links.about.aboutus}>About Us</a></li>
+              <li><a href=${links.about.findus}>Find Us</a></li>
+              <li><a href=${links.about.ourgoal}>Our Goal</a></li>
             </ul>
           </div>
         </nav>
@@ -137,10 +146,10 @@ export default class Footer {
             </h3>
             <div class="collapsible-content hidden">
               <ul>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Find Us</a></li>
-                <li><a href="#">Our Goal</a></li>
+                <li><a href=${links.about.contact}>Contact Us</a></li>
+                <li><a href=${links.about.aboutus}>About Us</a></li>
+                <li><a href=${links.about.findus}>Find Us</a></li>
+                <li><a href=${links.about.ourgoal}>Our Goal</a></li>
               </ul>
             </div>
           </div>

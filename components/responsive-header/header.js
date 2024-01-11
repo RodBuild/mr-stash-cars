@@ -33,6 +33,15 @@ export default class Header {
     }
   }
   content() {
+    const links = {
+      about: {
+        contact: './pages/about/contact-us/',
+        aboutus: './pages/about/about-us/',
+        findus: './pages/about/find-us/',
+        ourgoal: './pages/about/our-goal/',
+      },
+    }
+
     return `
       <nav class="sidebar">
         <ul>
@@ -44,7 +53,7 @@ export default class Header {
           <li><a href="/">TRADE</a></li>
           <li><a href="/">RENTALS</a></li>
           <li><a href="/">CAR CARE</a></li>
-          <li><a href="/">ABOUT</a></li>
+          <li><a href=${links.about.aboutus}>ABOUT</a></li>
         </ul>
       </nav>
       <nav class="fullbar">
