@@ -208,11 +208,15 @@ class Benefits {
     })
     container.addEventListener('scroll', () => {
       console.log('scrolling!')
+      this.descriptionContainer.classList.add('loading')
       const imageSize = container.scrollWidth / this.dataLength
       const currentScrollLeftLocation = container.scrollLeft
       this.currentIndex = Math.round(currentScrollLeftLocation / imageSize)
       this.updateButtons()
       this.updateData()
+      setTimeout(() => {
+        this.descriptionContainer.classList.remove('loading')
+      }, 300)
     })
   }
   loadImageNav() {
