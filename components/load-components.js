@@ -14,3 +14,25 @@ const footerElement = document.querySelector('footer')
 const footer = new Footer(footerElement)
 
 footer.init()
+
+// Skeletons
+const images = document.querySelectorAll('img')
+images.forEach((element) => {
+  function loaded() {
+    element.parentElement.style.backgroundImage = 'none'
+    element.classList.add('loaded')
+  }
+  if (element.complete) {
+    loaded()
+  } else {
+    element.addEventListener('load', loaded)
+  }
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('loaded')
+  const skeletons = document.querySelectorAll('.skeleton')
+  skeletons.forEach((element) => {
+    element.classList.remove('skeleton')
+  })
+})

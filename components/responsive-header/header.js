@@ -9,6 +9,16 @@ export default class Header {
     this._parentElement.innerHTML = this.innerHTML
     this.listeners()
   }
+  // contentLoader() {
+  //   function displayContent() {}
+  //   function displayGhost() {}
+
+  //   if (document.readyState === 'loading') {
+  //     document.addEventListener('DOMContentLoaded', displayContent)
+  //   } else {
+  //     displayContent()
+  //   }
+  // }
   listeners() {
     const openButton = document.querySelector('button.open-button')
     openButton.addEventListener('click', () => {
@@ -58,9 +68,7 @@ export default class Header {
       </nav>
       <nav class="fullbar">
         <ul>
-          <li>
-            <img src="../assets/brand/tiny-3.png" alt="Mr Stash Cars Logo" />
-          </li>
+          <li><img src="../assets/brand/tiny-3.png" alt="Mr Stash Cars Logo" /></li>
           <li><a href="/">NEW</a></li>
           <li><a href="/">USED</a></li>
           <li><a href="/">TRADE</a></li>
