@@ -1,18 +1,10 @@
 const benefitsData = [
   {
-    // title: 'Discounted Services',
-    title:
-      'Discounted Services for losers such as you! And your mom is kinda fatty, like you!!!! Discounted Services for losers such as you! And your mom is kinda fatty, like you!!!!',
+    title: 'Discounted Services',
     description:
-      'As our valued customer As our valued customerAs our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customerAs our valued customer As our valued customer As our valued customer As our valued customer As our valued customerAs our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customerAs our valued customer As our valued customer As our valued customer As our valued customer As our valued customerAs our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customerAs our valued customer As our valued customer As our valued customer As our valued customer As our valued customerAs our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customer As our valued customerAs our valued customer As our valued customer As our valued customer ',
-    // description:
-    //   "As our valued customer, you'll enjoy discounted rates on essential services, ensuring your vehicle stays in top shape without straining your budget. Drive with confidence, knowing we've got your maintenance needs covered affordably.",
+      "As our valued customer, you'll enjoy discounted rates on essential services, ensuring your vehicle stays in top shape without straining your budget. Drive with confidence, knowing we've got your maintenance needs covered affordably.",
     image: './assets/benefits/discounted-services.jpg',
-    // image:
-    // 'https://leahysauto.com/wp-content/uploads/2019/07/Four-Types-Of-Major-Car-Repairs-That-Are-Best-Handled-By-A-Trained-Mechanic.png',
-    // buttonText: 'Explore our services',
-    buttonText:
-      'Explore our services PLEASE O PLEASE JUST DO IT OR will die in real life please of please Explore our services PLEASE O PLEASE JUST DO IT OR will die in real life please of please',
+    buttonText: 'Explore our services',
     buttonURL: './car-care/search',
   },
   {
