@@ -199,5 +199,68 @@ class Benefits {
   }
 }
 
+class CTA {
+  constructor() {
+    this.offSet = 200
+    this.currentLeftPostion = 0
+    this.container = document.querySelector('.cta .container')
+    this.scrollArea = this.container.querySelector('.content .scroll-items')
+  }
+  updatePosition() {
+    this.scrollArea.scrollLeft = this.currentLeftPostion
+  }
+  updateButtons() {
+    const leftButton = this.container.querySelector('button.cta-left')
+    const rightButton = this.container.querySelector('button.cta-right')
+    console.log(this.currentLeftPostion, this.scrollArea.scrollWidth, this.scrollArea.clientWidth)
+    leftButton.classList.remove('disabled')
+    rightButton.classList.remove('disabled')
+    if (this.currentLeftPostion === 0) {
+      leftButton.classList.add('disabled')
+    } else if (this.currentLeftPostion + this.scrollArea.clientWidth > this.scrollArea.scrollWidth) {
+      rightButton.classList.add('disabled')
+    }
+  }
+  eventListeners() {
+    const buttons = this.container.querySelectorAll('button')
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const direction = button.className.includes('right') ? 'right' : 'left'
+        const scrollDisplayeArea = this.scrollArea.clientWidth
+        const scrollMaxArea = this.scrollArea.scrollWidth
+        if (direction === 'right' || direction === 'r') {
+          const newLeftPostion = this.currentLeftPostion + scrollDisplayeArea
+          if (newLeftPostion < scrollMaxArea) {
+            this.currentLeftPostion = newLeftPostion
+            console.log(newLeftPostion)
+          }
+        } else if (direction === 'left' || direction === 'l') {
+          const newLeftPostion = this.currentLeftPostion - scrollDisplayeArea
+          if (newLeftPostion > 0) {
+            this.currentLeftPostion = newLeftPostion
+            console.log(newLeftPostion)
+          } else {
+            this.currentLeftPostion = 0
+          }
+        }
+        this.updateButtons()
+        this.updatePosition()
+      })
+    })
+  }
+  init() {
+    this.eventListeners()
+  }
+}
+
+class PopularRents {
+  constructor() {
+    this.container = document.querySelector('.popular-rents .container')
+  }
+}
+
+const cta = new CTA()
+cta.init()
+
 const benefits = new Benefits()
 benefits.init()
