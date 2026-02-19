@@ -3,13 +3,13 @@
 import React, { createContext, useContext } from "react"
 import { FFContextProvider, useFeatureFlag } from "@harnessio/ff-react-client-sdk"
 
-// ─── Configuration ────────────────────────────────────────────
-const HARNESS_API_KEY = "0c393a50-91b3-4dca-9f6d-df5f24d5670a"
+// ─── Configuration (from .env.local) ──────────────────────────
+const HARNESS_API_KEY = process.env.NEXT_PUBLIC_HARNESS_FF_API_KEY || ""
 
 // Target identifies who the flags are being evaluated for
 const HARNESS_TARGET = {
-    identifier: 'reactclientsdk',
-    name: 'ReactClientSDK',
+    identifier: process.env.NEXT_PUBLIC_HARNESS_FF_TARGET_ID || "anonymous",
+    name: process.env.NEXT_PUBLIC_HARNESS_FF_TARGET_NAME || "Anonymous User",
 }
 
 // ─── Context ──────────────────────────────────────────────────
