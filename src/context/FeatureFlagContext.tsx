@@ -30,11 +30,14 @@ export function useFeatureFlags() {
 function FeatureFlagInner({ children }: { children: React.ReactNode }) {
     // This hook reads flags from the Harness SDK context
     const themeSwitcher = useFeatureFlag("theme_switcher")
+    const homePageSwitcher = useFeatureFlag("home_page_switcher")
 
     const getFlag = (flagName: string, defaultValue: string): string => {
-        // Currently we only have theme_switcher, but this is extensible
         if (flagName === "theme_switcher") {
             return (themeSwitcher as string) || defaultValue
+        }
+        if (flagName === "home_page_switcher") {
+            return (homePageSwitcher as string) || defaultValue
         }
         return defaultValue
     }

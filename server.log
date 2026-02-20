@@ -1,0 +1,18 @@
+
+> my-app@0.1.0 dev
+> next dev --turbopack
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+- Environments: .env.local
+
+✓ Starting...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Ready in 1192ms
+ GET /en 200 in 1454ms (compile: 900ms, proxy.ts: 99ms, render: 455ms)
+(node:10156) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///app/tailwind.config.ts?id=1771549891472 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ GET /en 200 in 320ms (compile: 96ms, proxy.ts: 7ms, render: 217ms)
